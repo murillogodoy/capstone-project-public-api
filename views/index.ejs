@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Joke Generator</h1>
+    <div class="container">
+        <p><%= setup %></p>
+        <% if (delivery) { %>
+            <p id="delivery"><%= delivery %></p>
+        <% } %>
+        <form action="/getjoke" method="post">
+            <button type="submit">Get a new joke</button>
+        </form>
+    </div>
+
+
+    <script>
+        const deliveryElement = document.getElementById('delivery');
+        if (deliveryElement) {
+            setTimeout(() => {
+                deliveryElement.style.opacity = '1';
+                deliveryElement.style.transition = 'none';
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
